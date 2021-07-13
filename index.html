@@ -15,8 +15,7 @@
 	<link rel="icon" type="image/png" href="favicon.png" />
 
 	<!-- STYLESHEETS :: FONTS -->
-	<link
-		href='https://fonts.googleapis.com/css?family=Open+Sans:600,400,300,400italic,600,700,700italic,800&subset=latin,cyrillic'
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:600,400,300,400italic,600,700,700italic,800&subset=latin,cyrillic'
 		rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!-- STYLESHEETS :: TEMPLATE -->
@@ -24,8 +23,6 @@
 </head>
 
 <body>
-
-
 	<!-- * * * * * * Mobile menu * * * * * * -->
 	<div class="mobile-menu">
 		<span class="mobile-menu-close close"></span>
@@ -39,8 +36,6 @@
 	</div>
 	<div class="overlay"></div>
 	<!-- * * * * * * Mobile menu: end * * * * * * -->
-
-
 
 	<div class="main-wrapper">
 		<!-- * * * * * * Header * * * * * * -->
@@ -72,11 +67,11 @@
 						<span></span>
 						<span></span>
 					</div>
-					<a href="#callback" class="callback-btn fancyboxModal hidden-xs">Заказать звонок</a>
+					<a href="#callback" class="callback-btn fancyboxModal hidden-xs button-callback">Заказать звонок</a>
 
 					<!-- * * * * * * Top menu * * * * * * -->
 					<div class="top-menu visible-md-inline-block visible-lg-inline-block">
-						<ul>
+						<ul class="top-menu__items">
 							<li><a href="#services">Цены на услуги</a></li>
 							<li><a href="#faq">Ответы на вопросы</a></li>
 							<li><a href="#contacts">Контакты</a></li>
@@ -91,61 +86,68 @@
 		<div class="header-push"></div>
 		<!-- * * * * * * Header: end * * * * * * -->
 
-
 		<!-- * * * * * * Top slider * * * * * * -->
-		<div class="top-slider white text-center relative">
-			<div class="item relative"
-				style="background: url(images/slide1.jpg) 50% 50% no-repeat; background-size: cover;">
-				<div class="table">
-					<div class="table-cell">
-						<div class="container">
-							<h1 class="big">
-								Шаблон сайта электрика
-							</h1>
-							<div class="text">
-								Решите свою проблему прямо сейчас! Низкие цены. <br />
-								Найдете дешевле - вернем разницу!
+		<div class="top-slider white text-center relative" id="top-slider__wrapper">
+			<ul>
+				<li class="top-slider__list top-slider__list--active">
+					<div class="item relative" style="background: url(images/slide1.jpg) 50% 50% no-repeat; background-size: cover;">
+						<div class="table">
+							<div class="table-cell">
+								<div class="container">
+									<h1 class="big">
+										Шаблон сайта электрика
+									</h1>
+									<div class="text">
+										Решите свою проблему прямо сейчас! Низкие цены. <br />
+										Найдете дешевле - вернем разницу!
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div class="item relative"
-				style="background: url(images/slide2.jpg) 50% 50% no-repeat; background-size: cover;">
-				<div class="table">
-					<div class="table-cell">
-						<div class="container">
-							<div class="title-h1 big">
-								Другой кричащий заголовок!
-							</div>
-							<div class="text">
-								В этом блоке можно разместить несколько слайдов на любую тематику, с необходимыми вам
-								заголовками и текстами
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="item relative"
-				style="background: url(images/slide3.jpg) 50% 50% no-repeat; background-size: cover;">
-				<div class="table">
-					<div class="table-cell">
-						<div class="container">
-							<div class="title-h1 big">
-								Услуги электрика
-							</div>
-							<div class="text">
-								Решите свою проблему прямо сейчас! Низкие цены. <br />
-								Найдете дешевле - вернем разницу!
+				</li>
+				<li class="top-slider__list">
+					<div class="item relative" style="background: url(images/slide2.jpg) 50% 50% no-repeat; background-size: cover;">
+						<div class="table">
+							<div class="table-cell">
+								<div class="container">
+									<div class="title-h1 big">
+										Другой кричащий заголовок!
+									</div>
+									<div class="text">
+										В этом блоке можно разместить несколько слайдов на любую тематику, с необходимыми вам
+										заголовками и текстами
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-
+				</li>
+				<li class="top-slider__list">
+					<div class="item relative" style="background: url(images/slide3.jpg) 50% 50% no-repeat; background-size: cover;">
+						<div class="table">
+							<div class="table-cell">
+								<div class="container">
+									<div class="title-h1 big">
+										Услуги электрика
+									</div>
+									<div class="text">
+										Решите свою проблему прямо сейчас! Низкие цены. <br />
+										Найдете дешевле - вернем разницу!
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<ul class="top-slider__dots">
+				<li class="dot dot-active"></li>
+				<li class="dot"></li>
+				<li class="dot"></li>
+			</ul>
 		</div>
 		<!-- * * * * * * Top slider: end * * * * * * -->
-
 
 		<!-- * * * * * * Services section * * * * * * -->
 		<section class="services-section gray-bg" id="services">
@@ -163,8 +165,7 @@
 					<div class="row services-carousel">
 						<div class="col-sm-6 col-md-4">
 							<div class="element relative">
-								<a class="absolute fancyboxModal" href="#application"
-									data-application="Аварийный выезд"></a>
+								<a class="absolute fancyboxModal" href="#application" data-application="Аварийный выезд"></a>
 								<div class="img-wrapper">
 									<img src="images/service1.jpg">
 								</div>
@@ -180,8 +181,7 @@
 						</div>
 						<div class="col-sm-6 col-md-4">
 							<div class="element relative">
-								<a class="absolute fancyboxModal" href="#application"
-									data-application="Монтаж или замена электропроводки"></a>
+								<a class="absolute fancyboxModal" href="#application" data-application="Монтаж или замена электропроводки"></a>
 								<div class="img-wrapper">
 									<img src="images/service2.jpg">
 								</div>
@@ -197,8 +197,7 @@
 						</div>
 						<div class="col-sm-6 col-md-4">
 							<div class="element relative">
-								<a class="absolute fancyboxModal" href="#application"
-									data-application="Ремонт, замена, перенос розеток"></a>
+								<a class="absolute fancyboxModal" href="#application" data-application="Ремонт, замена, перенос розеток"></a>
 								<div class="img-wrapper">
 									<img src="images/service3.jpg">
 								</div>
@@ -214,8 +213,7 @@
 						</div>
 						<div class="col-sm-6 col-md-4">
 							<div class="element relative">
-								<a class="absolute fancyboxModal" href="#application"
-									data-application="Замена электросчетчика"></a>
+								<a class="absolute fancyboxModal" href="#application" data-application="Замена электросчетчика"></a>
 								<div class="img-wrapper">
 									<img src="images/service4.jpg">
 								</div>
@@ -231,8 +229,7 @@
 						</div>
 						<div class="col-sm-6 col-md-4">
 							<div class="element relative">
-								<a class="absolute fancyboxModal" href="#application"
-									data-application="Установка, замена люстры"></a>
+								<a class="absolute fancyboxModal" href="#application" data-application="Установка, замена люстры"></a>
 								<div class="img-wrapper">
 									<img src="images/service5.jpg">
 								</div>
@@ -248,8 +245,7 @@
 						</div>
 						<div class="col-sm-6 col-md-4">
 							<div class="element relative">
-								<a class="absolute fancyboxModal" href="#application"
-									data-application="Установка светильников"></a>
+								<a class="absolute fancyboxModal" href="#application" data-application="Установка светильников"></a>
 								<div class="img-wrapper">
 									<img src="images/service6.jpg">
 								</div>
@@ -282,14 +278,13 @@
 			<div class="container text-center">
 				<span class="f30 helios">Не нашли нужной услуги?</span>
 				<div class="push20 visible-xs visible-sm"></div>
-				<a class="button button-services fancyboxModal invert" href="#feedback">Звоните, мы обязательно вам
+				<a id='button-callback' class="button button-services fancyboxModal invert button-callback" href="#feedback">Звоните, мы обязательно
+					вам
 					поможем!</a>
 			</div>
 			<div class="push50"></div>
 		</section>
 		<!-- * * * * * * Quest section: end * * * * * * -->
-
-
 
 		<!-- * * * * * * Num counters section * * * * * * -->
 		<section class="num-section">
@@ -338,7 +333,6 @@
 		</section>
 		<!-- * * * * * * Num counters section: end * * * * * * -->
 
-
 		<!-- * * * * * * steps title section * * * * * * -->
 		<section class="section2 dark-bg white relative">
 			<div class="push50"></div>
@@ -351,9 +345,7 @@
 		</section>
 		<!-- * * * * * * steps title section : end * * * * * * -->
 
-
 		<!-- * * * * * * steps section * * * * * * -->
-
 		<section class="steps-section">
 			<div class="push100"></div>
 			<div class="push10"></div>
@@ -406,9 +398,7 @@
 			<div class="push60"></div>
 			<div class="push20 visible-xs"></div>
 		</section>
-
 		<!-- * * * * * * steps section: end * * * * * * -->
-
 
 		<!-- * * * * * * Advantages section * * * * * * -->
 		<section class="advantages gray-bg" id="advantages">
@@ -458,10 +448,6 @@
 			<div class="push70"></div>
 		</section>
 		<!-- * * * * * * Advantages section: end * * * * * * -->
-
-
-
-
 
 		<!-- * * * * * * Accordeon section * * * * * * -->
 		<section class="accordeon-section" id="faq">
@@ -532,8 +518,6 @@
 		</section>
 		<!-- * * * * * * Accordeon section: end * * * * * * -->
 
-
-
 		<!-- * * * * * * Contacts section * * * * * * -->
 		<section class="contacts-section dark-bg" id="contacts">
 			<div class="push70"></div>
@@ -566,7 +550,6 @@
 		</section>
 		<!-- * * * * * * Contacts section: end * * * * * * -->
 
-
 		<!-- * * * * * * map section * * * * * * -->
 		<section class="map-section">
 			<script src="http://api-maps.yandex.ru/2.1/?load=package.full&lang=ru-RU" type="text/javascript"></script>
@@ -578,8 +561,6 @@
 						zoom: 16, // масштаб
 						controls: ['zoomControl']
 					}),
-
-
 						myPlacemark = new ymaps.Placemark(
 							[44.84373337182117, 37.65565927116387], // координаты маркера
 							{ "iconContent": "", "balloonContentBody": "г. Ваш город, Проспект Дзержинского д. 211", "balloonContentHeader": "" }, // контент маркера
@@ -597,18 +578,12 @@
 							});
 					mapexMap.behaviors.disable('scrollZoom');
 					mapexMap.geoObjects.add(myPlacemark);
-
-
 				});
 			</script>
 		</section>
 		<!-- * * * * * * map section: end * * * * * * -->
-
 		<div class="footer-push"></div>
 	</div>
-
-
-
 
 	<!-- * * * * * * Footer * * * * * * -->
 	<div class="footer-wrapper">
@@ -618,13 +593,10 @@
 	</div>
 	<!-- * * * * * * Footer: end * * * * * * -->
 
-
 	<div class="modal-overlay"></div>
 	<!-- * * * * * * Callback modal block * * * * * * -->
 	<div class="modal-callback" id="callback">
-		<div class="modal-close">
-			<img src="images/close_icon_green.svg" alt="modal-close">
-		</div>
+		<img class="modal-close" src="images/close_icon_green.svg" alt="modal-close">
 		<div class="title-h2">Мы перезвоним через 5 минут!</div>
 		<br />
 		<div class="rf">
@@ -644,7 +616,6 @@
 		</div>
 	</div>
 	<!-- * * * * * * Callback modal block: end * * * * * * -->
-
 
 	<!-- * * * * * * Feedback modal block * * * * * * -->
 	<div class="modal" id="feedback">
@@ -673,7 +644,6 @@
 	</div>
 	<!-- * * * * * * Feedback modal block: end * * * * * * -->
 
-
 	<!-- * * * * * * Application modal block * * * * * * -->
 	<div class="modal" id="application">
 		<div class="title-h2">Форма заявки</div>
@@ -681,8 +651,7 @@
 		<div class="rf">
 			<form name="form-application">
 				<div class="form-group">
-					<input type="text" name="service_name" id="applicationInput" class="form-control"
-						readonly="readonly" />
+					<input type="text" name="service_name" id="applicationInput" class="form-control" readonly="readonly" />
 				</div>
 				<div class="form-group">
 					<input name="fio" type="text" class="form-control required" placeholder="Ваше имя *" />
@@ -698,8 +667,6 @@
 		</div>
 	</div>
 	<!-- * * * * * * /. Application modal block * * * * * * -->
-
-
 	<div class="modal" id="responseMessage">
 		<div class="title-h2">Статус отправки формы:</div>
 		<div class="modal-content"></div>
@@ -707,19 +674,17 @@
 		<a href="#" class="button btn fancyClose">ok</a>
 	</div>
 
-
-
-
 	<!-- * * * * * * button to top * * * * * * -->
 	<img src="images/32_chevron_up.svg" alt="up" class="up">
 	<!-- * * * * * * button to top: end * * * * * * -->
 
+	<script src="src/main.js" type='module'></script>
 
 	<!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-	
+
 </body>
 
 </html>
