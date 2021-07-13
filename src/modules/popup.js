@@ -18,10 +18,7 @@ const togglePopup = () => {
   document.addEventListener('click', (evt) => {
     const target = evt.target;
 
-    if (
-      target.classList.contains('modal-close') ||
-      target.classList.contains('modal-overlay')
-    ) {
+    if (target.classList.contains('modal-close') || target.classList.contains('modal-overlay')) {
       popupNode.style.display = 'none';
       popupOverlay.style.display = 'none';
     }
