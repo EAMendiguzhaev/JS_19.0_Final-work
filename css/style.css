@@ -121,6 +121,7 @@ h2,
   margin-bottom: 20px;
   font-family: 'Helios';
   font-weight: bold;
+  text-align: center;
 }
 h3,
 .title-h3 {
@@ -1289,4 +1290,32 @@ video#video_background {
 .services-carousel {
   display: flex;
   transition: 0.2s;
+}
+
+/* Прелоадер */
+.sk-rotating-plane {
+  width: 2em;
+  height: 2em;
+  margin: auto;
+  background-color: #e9bb26;
+  animation: sk-rotating-plane 1.2s infinite ease-in-out;
+  display: none;
+}
+
+@keyframes sk-rotating-plane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
+/* Кнопка отправить в форме */
+.modal-callback__button {
+  display: flex;
+  justify-content: center;
 }
