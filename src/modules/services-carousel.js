@@ -77,6 +77,4 @@ const launchCarousel = () => {
   checkBtns();
 };
 
-launchCarousel();
-
-// export { launchCarousel };
+export { launchCarousel };

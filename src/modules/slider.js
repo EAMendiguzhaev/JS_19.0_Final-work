@@ -1,4 +1,4 @@
-const slider = () => {
+const launchSlider = () => {
   const sliderContainer = document.querySelector('#top-slider__wrapper');
   const sliderNodes = document.querySelectorAll('.top-slider__list');
   const dot = document.querySelectorAll('.dot');
@@ -72,4 +72,4 @@ const slider = () => {
   startSlide();
 };
 
-export { slider };
+export { launchSlider };
