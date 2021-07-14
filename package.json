@@ -1,0 +1,27 @@
+{
+  "name": "JS_19.0_diplom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.prod.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EAMendiguzhaev/JS_19.0_Final-work.git"
+  },
+  "keywords": [],
+  "author": "Мендигужаев Эльдар Артурович",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EAMendiguzhaev/JS_19.0_Final-work/issues"
+  },
+  "homepage": "https://github.com/EAMendiguzhaev/JS_19.0_Final-work#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.44.0",
+    "webpack-cli": "^4.7.2"
+  }
+}
