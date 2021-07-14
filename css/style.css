@@ -547,12 +547,10 @@ a.absolute {
   }
   40% {
     opacity: 0.5;
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26,
-      0 0 0 10px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26, 0 0 0 10px rgba(255, 255, 255, 0.3);
   }
   90% {
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26,
-      0 0 0 10px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26, 0 0 0 10px rgba(255, 255, 255, 0.3);
     -webkit-transform: scale(1.5);
     opacity: 0;
   }
@@ -563,12 +561,10 @@ a.absolute {
   }
   40% {
     opacity: 0.5;
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26,
-      0 0 0 10px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26, 0 0 0 10px rgba(255, 255, 255, 0.3);
   }
   100% {
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26,
-      0 0 0 10px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26, 0 0 0 10px rgba(255, 255, 255, 0.3);
     -moz-transform: scale(1.5);
     opacity: 0;
   }
@@ -579,12 +575,10 @@ a.absolute {
   }
   40% {
     opacity: 0.5;
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26,
-      0 0 0 10px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26, 0 0 0 10px rgba(255, 255, 255, 0.3);
   }
   100% {
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26,
-      0 0 0 10px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26, 0 0 0 10px rgba(255, 255, 255, 0.3);
     transform: scale(1.5);
     opacity: 0;
   }
@@ -1226,6 +1220,7 @@ video#video_background {
   padding: 0 2px;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.6);
+  display: none;
 }
 
 @media only screen and (min-width: 992px) {
@@ -1238,6 +1233,7 @@ video#video_background {
 }
 /**** /. services section *****/
 
+/* Авто-слайдер */
 .top-slider__list {
   display: none;
 }
@@ -1259,6 +1255,7 @@ video#video_background {
   justify-content: center;
   z-index: 15;
 }
+
 .top-slider__dots .dot {
   height: 20px;
   width: 20px;
@@ -1270,13 +1267,26 @@ video#video_background {
   transition: background-color, transform 0.4s, -webkit-transform 0.4s;
   cursor: pointer;
 }
+
 .top-slider__dots .dot-active {
   background-color: rgb(255, 255, 255);
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
+
 .top-slider__dots .dot:hover {
   background-color: #1a6e3d;
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
+}
+
+/* Карусель */
+
+.services-elements {
+  overflow: hidden;
+}
+
+.services-carousel {
+  display: flex;
+  transition: 0.2s;
 }
