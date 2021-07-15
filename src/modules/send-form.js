@@ -4,6 +4,8 @@ const sendForm = () => {
   const formCallback = document.querySelector('#form-callback');
   const inputsForm = formCallback.querySelectorAll('input');
   const btnSubmit = formCallback.querySelector('.feedback');
+  const popupNode = document.querySelector('.modal-callback');
+  const popupOverlay = document.querySelector('.modal-overlay');
 
   const statusMessage = document.createElement('div');
   statusMessage.style.cssText = `font-size: 2rem;
@@ -15,7 +17,7 @@ const sendForm = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: formData,
+      body: JSON.stringify(formData),
       credentials: 'include',
     });
   };
@@ -33,15 +35,15 @@ const sendForm = () => {
 
     formCallback.append(statusMessage);
     formCallback.insertAdjacentHTML('beforeend', `<div class="sk-rotating-plane"></div>`);
-
     const preloader = document.querySelector('.sk-rotating-plane');
+
     const loadMessage = () => {
       preloader.style.display = 'block';
     };
-
     statusMessage.textContent = loadMessage();
 
-    const formData = new FormData(formCallback);
+    let formData = new FormData(formCallback);
+    formData = Object.fromEntries(formData);
 
     postData(formData)
       .then((response) => {
@@ -52,6 +54,13 @@ const sendForm = () => {
         statusMessage.style.textAlign = 'center';
         statusMessage.textContent = successMessage;
         btnSubmit.disabled = false;
+
+        if (successMessage) {
+          setTimeout(() => {
+            popupNode.style.display = 'none';
+            popupOverlay.style.display = 'none';
+          }, 1500);
+        }
       })
       .catch((error) => {
         preloader.style.display = 'none';

@@ -12,17 +12,14 @@ const launchCarousel = () => {
       DESKTOP: 3,
     },
     SLIDE_TO_SCROLL: 1,
-    OPACITY: {
-      SWITCHED_ON: 1,
-      DISABLED: 0.3,
-    },
+    MOBILE_VERSION: 576,
   };
 
   let position = 0;
   let slideToShow = null;
   let userWidth = document.documentElement.clientWidth;
 
-  if (userWidth > 576) {
+  if (userWidth > CarouselSettings.MOBILE_VERSION) {
     slideToShow = CarouselSettings.SLIDE_SHOW.DESKTOP;
   } else {
     slideToShow = CarouselSettings.SLIDE_SHOW.MOBILE;
@@ -36,45 +33,35 @@ const launchCarousel = () => {
     item.style.minWidth = `${itemsWidth}px`;
   });
 
+  btnRight.addEventListener('click', () => {
+    const itemsLeft = itemCount - (Math.abs(position) + slideToShow * itemsWidth) / itemsWidth;
+
+    position -= itemsLeft >= CarouselSettings.SLIDE_TO_SCROLL ? movePosition : itemsLeft * itemsWidth;
+
+    if (userWidth > 576 && itemsLeft === 0) {
+      position = 0;
+    } else if (userWidth < 576 && itemsLeft === 0) {
+      position = 0;
+    }
+
+    setPosition();
+  });
+
   btnLeft.addEventListener('click', () => {
     const itemsLeft = Math.abs(position) / itemsWidth;
     position += itemsLeft >= CarouselSettings.SLIDE_TO_SCROLL ? movePosition : itemsLeft * itemsWidth;
 
+    if (userWidth > 576 && position >= itemsLeft) {
+      position = -(itemsWidth * (itemCount - (Math.abs(position) + slideToShow * itemsWidth) / itemsWidth));
+    } else if (userWidth < 576 && position >= itemsLeft) {
+      position = -(itemsWidth * (itemCount - (Math.abs(position) + slideToShow * itemsWidth) / itemsWidth));
+    }
     setPosition();
-    checkBtns();
-  });
-
-  btnRight.addEventListener('click', () => {
-    const itemsLeft = itemCount - (Math.abs(position) + slideToShow * itemsWidth) / itemsWidth;
-    position -= itemsLeft >= CarouselSettings.SLIDE_TO_SCROLL ? movePosition : itemsLeft * itemsWidth;
-
-    setPosition();
-    checkBtns();
   });
 
   const setPosition = () => {
     track.style.transform = `translateX(${position}px)`;
   };
-
-  const checkBtns = () => {
-    if (position === 0) {
-      btnLeft.disabled = true;
-      btnLeft.style.opacity = '0.3';
-    } else {
-      btnLeft.disabled = false;
-      btnLeft.style.opacity = '1';
-    }
-
-    if (position <= -(itemCount - slideToShow) * itemsWidth) {
-      btnRight.disabled = true;
-      btnRight.style.opacity = CarouselSettings.OPACITY.DISABLED;
-    } else {
-      btnRight.disabled = false;
-      btnRight.style.opacity = CarouselSettings.OPACITY.SWITCHED_ON;
-    }
-  };
-
-  checkBtns();
 };
 
 export { launchCarousel };

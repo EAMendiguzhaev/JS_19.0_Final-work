@@ -408,7 +408,7 @@ a.absolute {
 }
 .mobile-menu {
   position: fixed;
-  top: 0;
+  top: 35px;
   right: -400px;
   background: #21282e;
   height: 100%;
@@ -1289,7 +1289,8 @@ video#video_background {
 
 .services-carousel {
   display: flex;
-  transition: 0.2s;
+  transition: 0.5s;
+  position: relative;
 }
 
 /* Прелоадер */
