@@ -47,7 +47,7 @@ const sendForm = () => {
 
     postData(formData)
       .then((response) => {
-        if (response.status === 200) {
+        if (response.status !== 200) {
           throw new Error('Status Network not 200');
         }
         preloader.style.display = 'none';
