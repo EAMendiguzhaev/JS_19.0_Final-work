@@ -9,6 +9,8 @@ const togglePopup = () => {
   const form = document.querySelector('#form-callback');
   const formCallback = form.querySelectorAll('input');
 
+  const userWidth = document.documentElement.clientWidth;
+
   const clearInputs = () => {
     formCallback.forEach((item) => {
       item.value = '';
@@ -39,7 +41,10 @@ const togglePopup = () => {
         if (evt.target) {
           popupNode.style.display = 'block';
           popupOverlay.style.display = 'block';
-          menuAnim();
+
+          if (userWidth > 768) {
+            menuAnim();
+          }
         }
       });
     });
