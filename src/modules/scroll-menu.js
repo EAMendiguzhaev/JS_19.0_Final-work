@@ -15,8 +15,6 @@ const smoothScroll = () => {
     });
   });
 
-  console.log(pageYOffset);
-
   window.addEventListener('scroll', function () {
     if (pageYOffset >= 600) {
       btnArrowTop.style.display = 'block';
