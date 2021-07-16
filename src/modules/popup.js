@@ -9,6 +9,8 @@ const togglePopup = () => {
   const form = document.querySelector('#form-callback');
   const formCallback = form.querySelectorAll('input');
 
+  const userWidth = document.documentElement.clientWidth;
+
   const clearInputs = () => {
     formCallback.forEach((item) => {
       item.value = '';

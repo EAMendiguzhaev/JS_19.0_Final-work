@@ -47,7 +47,7 @@ const sendForm = () => {
 
     postData(formData)
       .then((response) => {
-        if (response.status !== 200) {
+        if (response.status === 200) {
           throw new Error('Status Network not 200');
         }
         preloader.style.display = 'none';
@@ -59,6 +59,7 @@ const sendForm = () => {
           setTimeout(() => {
             popupNode.style.display = 'none';
             popupOverlay.style.display = 'none';
+            statusMessage.textContent = '';
           }, 1500);
         }
       })
@@ -67,6 +68,12 @@ const sendForm = () => {
         statusMessage.style.textAlign = 'center';
         statusMessage.textContent = errorMessage;
         console.error(error);
+
+        if (errorMessage) {
+          setTimeout(() => {
+            statusMessage.textContent = '';
+          }, 1500);
+        }
       });
 
     clearInputs();

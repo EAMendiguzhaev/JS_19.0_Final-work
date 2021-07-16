@@ -15,8 +15,10 @@ const smoothScroll = () => {
     });
   });
 
+  console.log(pageYOffset);
+
   window.addEventListener('scroll', function () {
-    if (pageYOffset >= 1300) {
+    if (pageYOffset >= 600) {
       btnArrowTop.style.display = 'block';
     } else {
       btnArrowTop.style.display = 'none';
