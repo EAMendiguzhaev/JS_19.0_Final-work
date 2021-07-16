@@ -71,6 +71,8 @@ const sendForm = () => {
 
         if (errorMessage) {
           setTimeout(() => {
+            popupNode.style.display = 'none';
+            popupOverlay.style.display = 'none';
             statusMessage.textContent = '';
           }, 1500);
         }
